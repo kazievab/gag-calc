@@ -1,0 +1,17 @@
+name: build
+
+on: [push, pull_request]
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+    - name: Checkout current branch
+      uses: actions/checkout@v3
+    - name: Set up Java and Scala
+      uses: coursier/setup-action@v1
+      with:
+        java-version: graalvm-java17:22.3.3
+    - name: Compile, Test, Format check
+      run: sbt clean test scalafmtCheckAll scalafmtSbtCheck "scalafixAll --check"

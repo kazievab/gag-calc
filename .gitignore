@@ -1,5 +1,20 @@
-*.class
+.DB_Store
+.DS_Store
+logs
+target
+/.storage
+/.idea
+/.idea_modules
+/.classpath
+/.gradle
+/.project
+/.settings
+/RUNNING_PID
+node_modules
+yarn.lock
 *.log
-
-# virtual machine crash logs, see http://www.java.com/en/download/help/error_hotspot.xml
-hs_err_pid*
+.metals/
+.bloop/
+.bsp/
+.vscode/
+docs/

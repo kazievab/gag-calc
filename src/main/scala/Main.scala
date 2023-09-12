@@ -1,4 +1,5 @@
 import scala.scalajs.js.annotation.JSExportTopLevel
+
 import org.scalajs.dom
 import roter.AppRouter
 

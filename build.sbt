@@ -85,7 +85,7 @@ start := (Compile / fastOptJS / startWebpackDevServer).value
 dist := {
   val artifacts = (Compile / fullOptJS / webpack).value
   val artifactFolder = (Compile / fullOptJS / crossTarget).value
-  val distFolder = (ThisBuild / baseDirectory).value / "docs" / moduleName.value
+  val distFolder = (ThisBuild / baseDirectory).value / "docs"
 
   distFolder.mkdirs()
   artifacts.foreach { artifact =>

@@ -10,6 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - uses: coursier/cache-action@v6
+      - uses: actions/setup-node@v3
       - uses: coursier/setup-action@v1
         with:
           jvm: graalvm-community:17.0.9

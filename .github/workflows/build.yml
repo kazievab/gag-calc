@@ -12,6 +12,6 @@ jobs:
     - name: Set up Java and Scala
       uses: coursier/setup-action@v1
       with:
-        java-version: graalvm-java17:22.3.3
+        jvm: graalvm-community:17.0.9
     - name: Compile, Test, Format check
       run: sbt clean test scalafmtCheckAll scalafmtSbtCheck "scalafixAll --check"

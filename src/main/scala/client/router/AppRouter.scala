@@ -1,6 +1,6 @@
-package roter
+package client.router
 
-import components.Layout
+import client.components.Layout
 import japgolly.scalajs.react.extra.router._
 import japgolly.scalajs.react.vdom.all._
 
@@ -25,7 +25,7 @@ object AppRouter {
 
   def layout(c: RouterCtl[Page], r: Resolution[Page]) = Layout.component(Layout.Props(c, r))
 
-  val baseUrl = BaseUrl.fromWindowOrigin
+  val baseUrl = BaseUrl.fromWindowOrigin / "gods-and-glory-assistant"
 
   val router = Router(baseUrl, routerConfig)
 }

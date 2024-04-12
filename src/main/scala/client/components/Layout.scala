@@ -1,9 +1,9 @@
-package components
+package client.components
 
 import japgolly.scalajs.react.ScalaFnComponent
 import japgolly.scalajs.react.extra.router.{Resolution, RouterCtl}
 import japgolly.scalajs.react.vdom.all._
-import roter.AppRouter.Page
+import client.router.AppRouter.Page
 
 object Layout {
 
@@ -13,6 +13,6 @@ object Layout {
   )
 
   val component = ScalaFnComponent.withHooks[Props]
-    .render(_ => div("Test1"))
+    .render(_ => div("Test Vite Turbo Build"))
 
 }

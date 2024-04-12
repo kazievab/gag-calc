@@ -1,7 +1,9 @@
-import scala.scalajs.js.annotation.JSExportTopLevel
+package client
 
 import org.scalajs.dom
-import roter.AppRouter
+import router.AppRouter
+
+import scala.scalajs.js.annotation.JSExportTopLevel
 
 object Main {
 

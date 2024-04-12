@@ -17,4 +17,7 @@ yarn.lock
 .bloop/
 .bsp/
 .vscode/
-docs/
+.vite
+dist
+.turbo
+package-lock.json

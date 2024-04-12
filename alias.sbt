@@ -7,4 +7,4 @@ addCommandAlias("fmtCheck", ";scalafmtSbtCheck;scalafmtCheckAll;")
 addCommandAlias("format", ";fix;fmt;")
 addCommandAlias("formatCheck", ";clean;fixCheck;fmtCheck;")
 
-addCommandAlias("runDev", "~fastOptJS::webpack")
+addCommandAlias("dev", "~fastLinkJS")

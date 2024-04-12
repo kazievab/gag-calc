@@ -1,0 +1,39 @@
+name: Scala.js
+
+on:
+  workflow_call:
+    inputs:
+      name:
+        description: Name of workflow
+        required: false
+        type: string
+      run:
+        description: Scala.js command to run
+        required: true
+        type: string
+
+jobs:
+  scalajs:
+    name: ${{ inputs.name }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout current branch
+        uses: actions/checkout@v4
+      - name: Coursier cache
+        uses: coursier/cache-action@v6
+      - name: Install Java & Scala
+        uses: coursier/setup-action@v1
+        with:
+          jvm: graalvm-community:17.0.9
+      - name: Install Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+      - name: Install npm
+        run: npm install
+      - name: Run Scala.js
+        run: ${{ inputs.run }}
+      - uses: actions/upload-artifact@v3
+        with:
+          name: dist-artifact
+          path: dist/

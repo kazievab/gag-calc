@@ -4,17 +4,6 @@ on: [push, pull_request]
 
 jobs:
   build:
-    runs-on: ubuntu-latest
-    steps:
-    - name: Checkout current branch
-      uses: actions/checkout@v4
-    - uses: coursier/cache-action@v6
-    - name: Set up Java and Scala
-      uses: coursier/setup-action@v1
-      with:
-        jvm: graalvm-community:17.0.9
-    - uses: actions/setup-node@v3
-    - name: NPM Install
-      run: npm install
-    - name: Compile, Test, Format check
+    uses: ./.github/workflows/scalajs.yml
+    with:
       run: sbt clean test scalafmtCheckAll scalafmtSbtCheck "scalafixAll --check"

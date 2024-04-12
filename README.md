@@ -129,4 +129,4 @@ Make a production build with
 turbo build
 ```
 
-You can then find the built files in the `docs/` directory. 
+You can then find the built files in the `dist/` directory. 

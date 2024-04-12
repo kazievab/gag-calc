@@ -6,8 +6,5 @@ export default defineConfig({
   plugins: [
     scalaJSPlugin(),
     react()
-  ],
-  build: {
-    outDir: "docs"
-  }
+  ]
 });

@@ -1,9 +1,9 @@
 package client.components
 
+import client.router.AppRouter.Page
 import japgolly.scalajs.react.ScalaFnComponent
 import japgolly.scalajs.react.extra.router.{Resolution, RouterCtl}
 import japgolly.scalajs.react.vdom.all._
-import client.router.AppRouter.Page
 
 object Layout {
 

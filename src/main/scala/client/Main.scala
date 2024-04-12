@@ -1,9 +1,10 @@
 package client
 
-import org.scalajs.dom
-import router.AppRouter
-
 import scala.scalajs.js.annotation.JSExportTopLevel
+
+import org.scalajs.dom
+
+import router.AppRouter
 
 object Main {
 

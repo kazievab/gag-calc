@@ -17,11 +17,7 @@ case class ResearchRequirements(
 
 object ResearchRequirements {
 
-  // format: off
-
-  // Row 1
-
-  val coreTroglodyte: Seq[ResearchRequirements] = List(
+  val default: Seq[ResearchRequirements] = List(
     ResearchRequirements(1, 1700, 1950, 1650, 2100, 14400, 11, 0),
     ResearchRequirements(2, 3850, 3900, 3950, 4250, 32400, 12, 0),
     ResearchRequirements(3, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -36,9 +32,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 4200000, 5450000, 4150000, 4160000, 31536000, 22, 4),
     ResearchRequirements(13, 5900000, 7400000, 5800000, 6260000, 39484800, 23, 5),
     ResearchRequirements(14, 9300000, 11300000, 9100000, 10460000, 47520000, 24, 5)
-  ).map(_.copy(unitType = UnitType.TroglodytePirateGuardian, researchType = ResearchType.Core))
-
-  val costReductionTroglodyte: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.TroglodytePirateGuardian,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 1700, 1950, 1650, 2100, 14400, 11, 0),
     ResearchRequirements(2, 3850, 3900, 3950, 4250, 32400, 12, 0),
     ResearchRequirements(3, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -53,9 +52,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 4200000, 5450000, 4150000, 4160000, 31536000, 22, 4),
     ResearchRequirements(13, 6350000, 7400000, 6450000, 6310000, 39312000, 23, 5),
     ResearchRequirements(14, 10650000, 11300000, 11050000, 10610000, 47174400, 24, 5)
-  ).map(_.copy(unitType = UnitType.TroglodytePirateGuardian, researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeTroglodyte: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.TroglodytePirateGuardian,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 1700, 1950, 1650, 2100, 14400, 11, 0),
     ResearchRequirements(2, 3850, 3900, 3950, 4250, 32400, 12, 0),
     ResearchRequirements(3, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -70,9 +72,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 6350000, 7400000, 6450000, 6310000, 31536000, 22, 4),
     ResearchRequirements(13, 6350000, 7400000, 6450000, 6310000, 35078400, 23, 5),
     ResearchRequirements(14, 10650000, 11300000, 11050000, 10610000, 39571200, 24, 5)
-  ).map(_.copy(unitType = UnitType.TroglodytePirateGuardian, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedTroglodyte: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.TroglodytePirateGuardian,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 1700, 1950, 1650, 2100, 14400, 11, 0),
     ResearchRequirements(2, 3850, 3900, 3950, 4250, 32400, 12, 0),
     ResearchRequirements(3, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -87,11 +92,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 4200000, 5450000, 4150000, 4160000, 31536000, 22, 4),
     ResearchRequirements(13, 6350000, 7400000, 6450000, 6310000, 37497600, 23, 5),
     ResearchRequirements(14, 10650000, 11300000, 11050000, 10610000, 43459200, 24, 5)
-  ).map(_.copy(unitType = UnitType.TroglodytePirateGuardian, researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 2 GoblinAmphibianHalfling
-
-  val coreGoblin: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.TroglodytePirateGuardian,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 8950, 10000, 8650, 11000, 75600, 11, 0),
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -107,9 +113,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 15650000, 27250000, 15700000, 16200000, 72921600, 24, 5),
     ResearchRequirements(14, 25050000, 36750000, 25400000, 26600000, 82857600, 25, 5)
-  ).map(_.copy(unitType = UnitType.GoblinAmphibianHalfling,  researchType = ResearchType.Core))
-
-  val costReductionGoblin: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GoblinAmphibianHalfling,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -124,9 +133,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 74390400, 24, 5),
     ResearchRequirements(14, 37350000, 66375000, 38300000, 40400000, 85795200, 25, 5)
-  ).map(_.copy(unitType = UnitType.GoblinAmphibianHalfling,  researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeGoblin: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GoblinAmphibianHalfling,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -141,9 +153,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 75427200, 24, 5),
     ResearchRequirements(14, 37350000, 74500000, 38300000, 40400000, 85968000, 25, 5)
-  ).map(_.copy(unitType = UnitType.GoblinAmphibianHalfling,  researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedGoblin: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GoblinAmphibianHalfling,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -158,11 +173,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 74390400, 24, 5),
     ResearchRequirements(14, 37350000, 66375000, 38300000, 40400000, 85795200, 25, 5)
-  ).map(_.copy(unitType = UnitType.GoblinAmphibianHalfling,  researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 2 OverseerSirenGargoyle
-
-  val coreOverseer: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GoblinAmphibianHalfling,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 8950, 10000, 8650, 11000, 75600, 11, 0),
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
@@ -178,9 +194,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 15650000, 27250000, 15700000, 16200000, 72921600, 24, 5),
     ResearchRequirements(14, 25050000, 36750000, 25400000, 26600000, 82857600, 25, 5)
-  ).map(_.copy(unitType = UnitType.OverseerSirenGargoyle,  researchType = ResearchType.Core))
-
-  val costReductionOverseer: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OverseerSirenGargoyle,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -195,9 +214,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 74390400, 24, 5),
     ResearchRequirements(14, 37350000, 66375000, 38300000, 40400000, 85795200, 25, 5)
-  ).map(_.copy(unitType = UnitType.OverseerSirenGargoyle,  researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeOverseer: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OverseerSirenGargoyle,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -212,9 +234,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 75427200, 24, 5),
     ResearchRequirements(14, 37350000, 74500000, 38300000, 40400000, 85968000, 25, 5)
-  ).map(_.copy(unitType = UnitType.OverseerSirenGargoyle, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedOverseer: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OverseerSirenGargoyle,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 4700, 4750, 4850, 5200, 39600, 12, 0),
     ResearchRequirements(2, 13500, 14500, 14000, 15000, 108000, 13, 0),
     ResearchRequirements(3, 20500, 22000, 21000, 23000, 151200, 14, 0),
@@ -229,11 +254,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 10950000, 22500000, 10850000, 11000000, 63072000, 23, 4),
     ResearchRequirements(13, 19750000, 42000000, 20000000, 20800000, 74390400, 24, 5),
     ResearchRequirements(14, 37350000, 66375000, 38300000, 40400000, 85795200, 25, 5)
-  ).map(_.copy(unitType = UnitType.OverseerSirenGargoyle, researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 3 CyclopsMedusaElf
-
-  val coreCyclops: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OverseerSirenGargoyle,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 15500, 15500, 16000, 17000, 129600, 12, 2),
     ResearchRequirements(1, 11000, 11500, 11500, 12000, 86400, 13, 2),
     ResearchRequirements(2, 19000, 20500, 19500, 21500, 140400, 14, 2),
@@ -249,9 +275,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 28500000, 42000000, 28500000, 28500000, 228614400, 24, 4),
     ResearchRequirements(13, 39500000, 65000000, 40000000, 40500000, 279417600, 25, 5),
     ResearchRequirements(14, 61500000, 93750000, 63000000, 64500000, 313977600, 26, 5)
-  ).map(_.copy(unitType = UnitType.CyclopsMedusaElf, researchType = ResearchType.Core))
-
-  val costReductionCyclops: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.CyclopsMedusaElf,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 11000, 11500, 11500, 12000, 86400, 13, 2),
     ResearchRequirements(2, 19000, 20500, 19500, 21500, 140400, 14, 2),
     ResearchRequirements(3, 33500, 36000, 34500, 38500, 205200, 15, 2),
@@ -266,9 +295,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 28500000, 42000000, 28500000, 28500000, 228614400, 24, 4),
     ResearchRequirements(13, 44500000, 60000000, 44500000, 47500000, 249350400, 25, 5),
     ResearchRequirements(14, 64500000, 82500000, 64500000, 71250000, 262224000, 26, 5)
-  ).map(_.copy(unitType = UnitType.CyclopsMedusaElf, researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeCyclops: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.CyclopsMedusaElf,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 11000, 11500, 11500, 12000, 86400, 13, 2),
     ResearchRequirements(2, 19000, 20500, 19500, 21500, 140400, 14, 2),
     ResearchRequirements(3, 33500, 36000, 34500, 38500, 205200, 15, 2),
@@ -283,9 +315,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 28500000, 42000000, 28500000, 28500000, 228614400, 24, 4),
     ResearchRequirements(13, 44500000, 60000000, 44500000, 47500000, 246585600, 25, 5),
     ResearchRequirements(14, 64500000, 82500000, 64500000, 71250000, 264556800, 26, 5)
-  ).map(_.copy(unitType = UnitType.CyclopsMedusaElf, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedCyclops: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.CyclopsMedusaElf,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 11000, 11500, 11500, 12000, 86400, 13, 2),
     ResearchRequirements(2, 19000, 20500, 19500, 21500, 140400, 14, 2),
     ResearchRequirements(3, 33500, 36000, 34500, 38500, 205200, 15, 2),
@@ -300,11 +335,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 28500000, 42000000, 28500000, 28500000, 228614400, 24, 4),
     ResearchRequirements(13, 44500000, 60000000, 44500000, 47500000, 246585600, 25, 5),
     ResearchRequirements(14, 64500000, 82500000, 64500000, 71250000, 259459200, 26, 5)
-  ).map(_.copy(unitType = UnitType.CyclopsMedusaElf, researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 4 GiantElementalGolem
-
-  val coreGiant: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.CyclopsMedusaElf,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 38000, 40000, 39500, 42500, 302400, 13, 2),
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
@@ -320,9 +356,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 62500000, 104500000, 63000000, 65000000, 368928000, 26, 5),
     ResearchRequirements(14, 97500000, 150750000, 99000000, 105000000, 412128000, 27, 5)
-  ).map(_.copy(unitType = UnitType.GiantElementalGolem, researchType = ResearchType.Core))
-
-  val costReductionGiant: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GiantElementalGolem,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -337,9 +376,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 350611200, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 366076800, 27, 5)
-  ).map(_.copy(unitType = UnitType.GiantElementalGolem, researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeGiant: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GiantElementalGolem,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -354,9 +396,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 347328000, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 368928000, 27, 5)
-  ).map(_.copy(unitType = UnitType.GiantElementalGolem, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedGiant: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GiantElementalGolem,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -371,11 +416,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 351648000, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 373248000, 27, 5)
-  ).map(_.copy(unitType = UnitType.GiantElementalGolem, researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 4 OgreKrakenDwarf
-
-  val coreOgre: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.GiantElementalGolem,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 38000, 40000, 39500, 42500, 302400, 13, 2),
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
@@ -391,9 +437,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 62500000, 104500000, 63000000, 65000000, 368928000, 26, 5),
     ResearchRequirements(14, 97500000, 150750000, 99000000, 105000000, 412128000, 27, 5)
-  ).map(_.copy(unitType = UnitType.OgreKrakenDwarf, researchType = ResearchType.Core))
-
-  val costReductionOgre: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OgreKrakenDwarf,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -408,9 +457,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 350611200, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 366076800, 27, 5)
-  ).map(_.copy(unitType = UnitType.OgreKrakenDwarf, researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeOgre: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OgreKrakenDwarf,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -425,9 +477,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 347328000, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 368928000, 27, 5)
-  ).map(_.copy(unitType = UnitType.OgreKrakenDwarf, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedOgre: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OgreKrakenDwarf,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 17500, 18500, 18000, 20000, 129600, 14, 2),
     ResearchRequirements(2, 32000, 34000, 32500, 36500, 194400, 15, 2),
     ResearchRequirements(3, 43000, 45000, 44500, 47500, 237600, 16, 2),
@@ -442,11 +497,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 45000000, 67500000, 45000000, 45000000, 325728000, 25, 4),
     ResearchRequirements(13, 74000000, 98500000, 74000000, 78000000, 351648000, 26, 5),
     ResearchRequirements(14, 110250000, 137250000, 110250000, 119250000, 373248000, 27, 5)
-  ).map(_.copy(unitType = UnitType.OgreKrakenDwarf, researchType = ResearchType.RecruitmentSpeed))
-
-  // Row 5 MinotaurNeptuneDestroyer
-
-  val coreMinotaur: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.OgreKrakenDwarf,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  ) ++ List(
     ResearchRequirements(0, 54000, 57500, 56000, 61500, 399600, 14, 3),
     ResearchRequirements(1, 24500, 26500, 25500, 28000, 151200, 15, 3),
     ResearchRequirements(2, 37000, 38500, 38500, 41000, 205200, 16, 3),
@@ -462,9 +518,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 103500000, 155000000, 103500000, 103500000, 575424000, 26, 4),
     ResearchRequirements(13, 152500000, 208000000, 154500000, 159500000, 625795200, 27, 5),
     ResearchRequirements(14, 213750000, 274250000, 218250000, 229500000, 676166400, 28, 5)
-  ).map(_.copy(unitType = UnitType.MinotaurNeptuneDestroyer, researchType = ResearchType.Core))
-
-  val costReductionMinotaur: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.MinotaurNeptuneDestroyer,
+      researchType = ResearchType.Core
+    )
+  ) ++ List(
     ResearchRequirements(1, 24500, 26500, 25500, 28000, 151200, 15, 3),
     ResearchRequirements(2, 37000, 38500, 38500, 41000, 205200, 16, 3),
     ResearchRequirements(3, 62500, 66000, 66000, 66000, 345600, 17, 3),
@@ -479,9 +538,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 103500000, 155000000, 103500000, 103500000, 575424000, 26, 4),
     ResearchRequirements(13, 166000000, 275000000, 168500000, 168500000, 593395200, 27, 5),
     ResearchRequirements(14, 228500000, 395000000, 233500000, 233500000, 604195200, 28, 5)
-  ).map(_.copy(unitType = UnitType.MinotaurNeptuneDestroyer, researchType = ResearchType.CostReduction))
-
-  val abilityUpgradeMinotaur: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.MinotaurNeptuneDestroyer,
+      researchType = ResearchType.CostReduction
+    )
+  ) ++ List(
     ResearchRequirements(1, 24500, 26500, 25500, 28000, 151200, 15, 3),
     ResearchRequirements(2, 37000, 38500, 38500, 41000, 205200, 16, 3),
     ResearchRequirements(3, 62500, 66000, 66000, 66000, 345600, 17, 3),
@@ -496,9 +558,12 @@ object ResearchRequirements {
     ResearchRequirements(12, 103500000, 155000000, 103500000, 103500000, 575424000, 26, 4),
     ResearchRequirements(13, 166000000, 275000000, 168500000, 168500000, 597024000, 27, 5),
     ResearchRequirements(14, 228500000, 395000000, 233500000, 233500000, 618624000, 28, 5)
-  ).map(_.copy(unitType = UnitType.MinotaurNeptuneDestroyer, researchType = ResearchType.AbilityUpgrade))
-
-  val recruitmentSpeedMinotaur: Seq[ResearchRequirements] = List(
+  ).map(
+    _.copy(
+      unitType = UnitType.MinotaurNeptuneDestroyer,
+      researchType = ResearchType.AbilityUpgrade
+    )
+  ) ++ List(
     ResearchRequirements(1, 24500, 26500, 25500, 28000, 151200, 15, 3),
     ResearchRequirements(2, 37000, 38500, 38500, 41000, 205200, 16, 3),
     ResearchRequirements(3, 62500, 66000, 66000, 66000, 345600, 17, 3),
@@ -513,8 +578,11 @@ object ResearchRequirements {
     ResearchRequirements(12, 103500000, 155000000, 103500000, 103500000, 575424000, 26, 4),
     ResearchRequirements(13, 166000000, 275000000, 168500000, 168500000, 593395200, 27, 5),
     ResearchRequirements(14, 228500000, 395000000, 233500000, 233500000, 602380800, 28, 5)
-  ).map(_.copy(unitType = UnitType.MinotaurNeptuneDestroyer, researchType = ResearchType.RecruitmentSpeed))
-
-  // format: on
+  ).map(
+    _.copy(
+      unitType = UnitType.MinotaurNeptuneDestroyer,
+      researchType = ResearchType.RecruitmentSpeed
+    )
+  )
 
 }

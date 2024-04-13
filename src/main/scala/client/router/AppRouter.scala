@@ -25,7 +25,7 @@ object AppRouter {
 
   def layout(c: RouterCtl[Page], r: Resolution[Page]) = Layout.component(Layout.Props(c, r))
 
-  val baseUrl = BaseUrl.fromWindowOrigin
+  val baseUrl = BaseUrl.fromWindowOrigin / "gag-calc"
 
   val router = Router(baseUrl, routerConfig)
 }

@@ -1,8 +1,8 @@
 package client.router
 
 import client.components.Layout
+import client.pages.DeityTechnologyPage
 import japgolly.scalajs.react.extra.router._
-import japgolly.scalajs.react.vdom.all._
 
 object AppRouter {
 
@@ -18,7 +18,7 @@ object AppRouter {
     import dsl._
 
     (
-      staticRoute(RootPage.path, RootPage) ~> render(div(""))
+      staticRoute(RootPage.path, RootPage) ~> render(DeityTechnologyPage().render)
     )
       .notFound(redirectToPage(RootPage)(SetRouteVia.HistoryReplace))
   }.renderWith(layout)

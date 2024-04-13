@@ -13,6 +13,6 @@ object Layout {
   )
 
   val component = ScalaFnComponent.withHooks[Props]
-    .render(_ => div("Test Vite Turbo Build"))
+    .render(_ => div("Test Vite Turbo Build Github Page"))
 
 }

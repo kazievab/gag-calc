@@ -1,7 +1,6 @@
 package client.utils.localization
 
 import scala.scalajs.js
-import typings.i18next.i18nextBooleans
 import typings.i18next.mod.{InitOptions, InterpolationOptions, Resource, default => i18n}
 import typings.i18nextBrowserLanguagedetector.mod.{default => LanguageDetector}
 import typings.reactI18next.mod.initReactI18next
@@ -23,7 +22,6 @@ object I18n {
         .setResources(resources)
         .setFallbackLng("ru")
         .setDebug(true)
-        .setKeySeparator(i18nextBooleans.`false`)
         .setInterpolation(InterpolationOptions().setEscapeValue(false))
     )
 

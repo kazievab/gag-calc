@@ -10,6 +10,7 @@ import japgolly.scalajs.react.vdom.all._
 import typings.antDesignIcons.components.AntdIcon
 import typings.antDesignIconsSvg.esAsnDeleteOutlinedMod.{default => DeleteOutlinedIcon}
 import typings.antDesignIconsSvg.esAsnEditOutlinedMod.{default => EditOutlinedIcon}
+import typings.antDesignIconsSvg.esAsnSelectOutlinedMod.{default => SelectOutlinedIcon}
 import typings.antd.{antdStrings, components => Antd}
 
 final case class ActionMenu(
@@ -50,6 +51,31 @@ object ActionMenu extends IdentitySyntax {
               .rawNode
             else Antd.Button(t("common:Edit"))
               .`type`(antdStrings.primary)
+              .onClick(_ => item.onClick)
+              .disabled(item.disabled)
+              .rawNode
+          case item: ActionItem.View =>
+            if (item.icon) Tooltip()
+              .setTitle(t("common:View"))
+              .setChildren(
+                Antd.Button()
+                  .icon(
+                    AntdIcon(SelectOutlinedIcon)
+                      .style(commonStyle.normalizeToCustomIcon)
+                  )
+                  .`type`(antdStrings.text_)
+                  .disabled(item.disabled)
+                  .onClick(_ => item.onClick)
+              )
+              .render
+              .rawNode
+            else Antd.Button(t("common:View"))
+              .`type`(antdStrings.primary)
+              .onClick(_ => item.onClick)
+              .disabled(item.disabled)
+              .rawNode
+          case item: ActionItem.Back => Antd.Button(t("common:Back"))
+              .`type`(antdStrings.default)
               .onClick(_ => item.onClick)
               .disabled(item.disabled)
               .rawNode

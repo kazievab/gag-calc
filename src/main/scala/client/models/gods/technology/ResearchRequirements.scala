@@ -11,9 +11,12 @@ case class ResearchRequirements(
   seconds: Long,
   universityLevel: Int,
   godLevel: Int,
-  unitType: UnitType = UnitType.Noop,
-  researchType: ResearchType = ResearchType.Noop
-)
+  unitType: UnitType = UnitType.TroglodytePirateGuardian,
+  researchType: ResearchType = ResearchType.Core,
+  id: Int = 0
+) {
+  def setId(value: Int): ResearchRequirements = copy(id = value)
+}
 
 object ResearchRequirements {
 
@@ -583,6 +586,6 @@ object ResearchRequirements {
       unitType = UnitType.MinotaurNeptuneDestroyer,
       researchType = ResearchType.RecruitmentSpeed
     )
-  )
+  ).zipWithIndex.map { case (entity, index) => entity.setId(index) }
 
 }

@@ -1,18 +1,17 @@
 package client.components
 
-import client.router.AppRouter.Page
+import client.router.AppRouter.Route
 import client.utils.localization.useTranslation
 import japgolly.scalajs.react.ScalaFnComponent
 import japgolly.scalajs.react.extra.router.{Resolution, RouterCtl}
 import typings.antDesignProProvider.components.ProConfigProvider
-import typings.antd.{esLocaleEnUSMod, esLocaleRuRUMod}
-import typings.antd.{components => Antd}
+import typings.antd.{esLocaleEnUSMod, esLocaleRuRUMod, components => Antd}
 
 object Layout {
 
   final case class Props(
-    router: RouterCtl[Page],
-    r: Resolution[Page]
+    router: RouterCtl[Route],
+    r: Resolution[Route]
   )
 
   val component = ScalaFnComponent.withHooks[Props]

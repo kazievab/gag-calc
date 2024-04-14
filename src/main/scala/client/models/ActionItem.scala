@@ -21,6 +21,17 @@ object ActionItem {
     disabled: Boolean = false
   ) extends ActionItem
 
+  case class View(
+    onClick: Callback,
+    icon: Boolean = true,
+    disabled: Boolean = false
+  ) extends ActionItem
+
+  case class Back(
+    onClick: Callback,
+    disabled: Boolean = false
+  ) extends ActionItem
+
   case class DeleteConfirm(
     onConfirm: Callback,
     disabled: Boolean = false,

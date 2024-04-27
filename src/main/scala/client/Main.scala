@@ -1,6 +1,7 @@
 package client
 
 import client.utils.localization.I18n
+import japgolly.scalajs.react.ReactDOMClient
 
 import scala.scalajs.js.annotation.JSExportTopLevel
 import org.scalajs.dom
@@ -14,7 +15,7 @@ object Main {
 
     val root = dom.document.getElementById("root")
 
-    AppRouter.router().renderIntoDOM(root)
+    ReactDOMClient.createRoot(root).render(AppRouter.router())
   }
 
 }

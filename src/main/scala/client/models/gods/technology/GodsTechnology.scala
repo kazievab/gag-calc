@@ -49,6 +49,8 @@ case class GodsTechnology(
     additionalParameters.researchSpeed
   ).sum
 
+  def speedResearchCost: ResearchCost = ResearchCost.createAcceleration(researchSpeed)
+
   def librarionResearchCost: Double = librarionLevel.map(_.researchCost).getOrElse(0)
   def ageOfScienceGoldResearchCost: Double = if (ageOfScience) 0.3 else 0
 
@@ -60,12 +62,7 @@ case class GodsTechnology(
     additionalParameters.woodResearchCost
   ).sum
 
-  def woodResearchCost: Double = Math.abs(
-    Math.max(preWoodResearchCost, GodsTechnology.minResearchCost)
-  )
-
-  def woodResearchCostPercent: String =
-    (if (woodResearchCost != 0) "-" else "") + (woodResearchCost * 100).toString + "%"
+  def woodResearchCost: ResearchCost = ResearchCost.createResource(preWoodResearchCost, GodsTechnology.minResearchCost)
 
   private def preGoldResearchCost: Double = Seq(
     GodsTechnology.baseResearchCost,
@@ -76,12 +73,7 @@ case class GodsTechnology(
     additionalParameters.goldResearchCost
   ).sum
 
-  def goldResearchCost: Double = Math.abs(
-    Math.max(preGoldResearchCost, GodsTechnology.minResearchCost)
-  )
-
-  def goldResearchCostPercent: String =
-    (if (goldResearchCost < 0) "-" else "+") + Math.ceil(goldResearchCost * 100).toString + "%"
+  def goldResearchCost: ResearchCost = ResearchCost.createResource(preGoldResearchCost, GodsTechnology.minResearchCost)
 
   private def preStoneResearchCost: Double = Seq(
     GodsTechnology.baseResearchCost,
@@ -91,12 +83,7 @@ case class GodsTechnology(
     additionalParameters.stoneResearchCost
   ).sum
 
-  def stoneResearchCost: Double = Math.abs(
-    Math.max(preStoneResearchCost, GodsTechnology.minResearchCost)
-  )
-
-  def stoneResearchCostPercent: String =
-    (if (stoneResearchCost != 0) "-" else "") + (stoneResearchCost * 100).toString + "%"
+  def stoneResearchCost: ResearchCost = ResearchCost.createResource(preStoneResearchCost, GodsTechnology.minResearchCost)
 
   def preStardustResearchCost: Double = Seq(
     GodsTechnology.baseResearchCost,
@@ -106,27 +93,24 @@ case class GodsTechnology(
     additionalParameters.stardustResearchCost
   ).sum
 
-  def stardustResearchCost: Double = Math.abs(
-    Math.max(preStardustResearchCost, GodsTechnology.minResearchCost)
-  )
-
-  def stardustResearchCostPercent: String =
-    (if (stardustResearchCost != 0) "-" else "") + (stardustResearchCost * 100).toString + "%"
+  def stardustResearchCost: ResearchCost =
+    ResearchCost.createResource(preStardustResearchCost, GodsTechnology.minResearchCost)
 
   lazy val researchRequirements: Seq[ResearchRequirements] =
     if (researchIds.isEmpty) ResearchRequirements.default
     else ResearchRequirements.default.filter(entity => researchIds.contains(entity.id))
 
-  lazy val totalTimeResearchTimeCost: Double = TimeUnit.SECONDS.toDays(researchRequirements.map(_.seconds).sum).toDouble
+  lazy val totalTimeResearchCost: Double = researchRequirements.map(_.seconds).sum
   lazy val totalWoodResearchCost: Double = researchRequirements.map(_.wood).sum.toDouble
   lazy val totalGoldResearchCost: Double = researchRequirements.map(_.gold).sum.toDouble
   lazy val totalStoneResearchCost: Double = researchRequirements.map(_.stone).sum.toDouble
   lazy val totalStardustResearchCost: Double = researchRequirements.map(_.stardust).sum.toDouble
 
-  lazy val currentWoodResearchCost: Double = (1 - woodResearchCost) * totalWoodResearchCost
-  lazy val currentGoldResearchCost: Double = (1 - goldResearchCost) * totalGoldResearchCost
-  lazy val currentStoneResearchCost: Double = (1 - stoneResearchCost) * totalStoneResearchCost
-  lazy val currentStardustResearchCost: Double = (1 - stardustResearchCost) * totalStardustResearchCost
+  lazy val currentTimeResearchCost: Double = TimeUnit.SECONDS.toDays((totalTimeResearchCost / researchSpeed).toLong)
+  lazy val currentWoodResearchCost: Double = (1 - woodResearchCost.value) * totalWoodResearchCost
+  lazy val currentGoldResearchCost: Double = (1 - goldResearchCost.value) * totalGoldResearchCost
+  lazy val currentStoneResearchCost: Double = (1 - stoneResearchCost.value) * totalStoneResearchCost
+  lazy val currentStardustResearchCost: Double = (1 - stardustResearchCost.value) * totalStardustResearchCost
 }
 
 object GodsTechnology {

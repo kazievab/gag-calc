@@ -23,10 +23,10 @@ lazy val client = project
         "io.circe"      %%% "circe-generic"             % "0.14.5",
         "io.circe"      %%% "circe-generic-extras"      % "0.14.3",
         "com.beachape"  %%% "enumeratum-circe"          % "1.7.3",
-        "org.scala-js"  %%% "scalajs-dom"               % "2.6.0",
+        "org.scala-js"  %%% "scalajs-dom"               % "2.8.0",
         "org.scala-js"  %%% "scalajs-java-securerandom" % "1.0.0",
-        "com.github.japgolly.scalajs-react" %%% "core"  % "2.1.1",
-        "com.github.japgolly.scalajs-react" %%% "extra" % "2.1.1"
+        "com.github.japgolly.scalajs-react" %%% "core"  % "2.2.0-beta2",
+        "com.github.japgolly.scalajs-react" %%% "extra" % "2.2.0-beta2"
       ),
     stFlavour := Flavour.ScalajsReact,
     stIgnore ++= List("react-dom", "typescript"),

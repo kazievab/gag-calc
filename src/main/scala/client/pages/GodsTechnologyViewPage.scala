@@ -60,65 +60,71 @@ object GodsTechnologyViewPage extends IdentitySyntax {
             .statistic(
               StatisticProps()
                 .setTitle(t("technology:Resources.Acceleration"))
-                .setTip("Текст справки")
+                .setTip(t("technology:Resources.Tip.Acceleration"))
                 .setPrecision(0)
-                .setValue(entity.totalTimeResearchTimeCost)
+                .setValue(entity.currentTimeResearchCost)
+                .setDescription(
+                  StatisticCard.Statistic()
+                    .title(t("technology:ResearchSpeed"))
+                    .value(entity.speedResearchCost.percent)
+                    .trend(entity.speedResearchCost.trend)
+                )
             ),
           StatisticCard.Divider().`type`(antDesignProCardStrings.vertical),
           StatisticCard()
             .statistic(
               StatisticProps()
                 .setTitle(t("technology:Resources.Wood"))
-                .setTip("Текст справки")
+                .setTip(t("technology:Resources.Tip.Wood"))
                 .setPrecision(0)
                 .setValue(entity.currentWoodResearchCost)
                 .setDescription(
                   StatisticCard.Statistic()
                     .title(t("technology:ResearchCost"))
-                    .value(entity.woodResearchCostPercent)
-                    .trend(antDesignProCardStrings.down)
+                    .value(entity.woodResearchCost.percent)
+                    .trend(entity.woodResearchCost.trend)
                 )
             ),
           StatisticCard()
             .statistic(
               StatisticProps()
                 .setTitle(t("technology:Resources.Gold"))
-                .setTip("Текст справки")
+                .setTip(t("technology:Resources.Tip.Gold"))
                 .setPrecision(0)
                 .setValue(entity.currentGoldResearchCost)
                 .setDescription(
                   StatisticCard.Statistic()
                     .title(t("technology:ResearchCost"))
-                    .value(entity.goldResearchCostPercent)
-                    .trend(antDesignProCardStrings.down)
+                    .value(entity.goldResearchCost.percent)
+                    .trend(entity.goldResearchCost.trend)
                 )
             ),
           StatisticCard()
             .statistic(
               StatisticProps()
                 .setTitle(t("technology:Resources.Stone"))
-                .setTip("Текст справки")
+                .setTip(t("technology:Resources.Tip.Stone"))
                 .setPrecision(0)
                 .setValue(entity.currentStoneResearchCost)
                 .setDescription(
                   StatisticCard.Statistic()
                     .title(t("technology:ResearchCost"))
-                    .value(entity.stoneResearchCostPercent)
-                    .trend(antDesignProCardStrings.down)
+                    .value(entity.stoneResearchCost.percent)
+                    .trend(entity.stoneResearchCost.trend)
                 )
             ),
           StatisticCard()
             .statistic(
               StatisticProps()
                 .setTitle(t("technology:Resources.Stardust"))
-                .setTip("Текст справки")
+                .setTip(t("technology:Resources.Tip.Stardust"))
                 .setPrecision(0)
                 .setValue(entity.currentStardustResearchCost)
                 .setDescription(
                   StatisticCard.Statistic()
                     .title(t("technology:ResearchCost"))
-                    .value(entity.stardustResearchCostPercent)
-                    .trend(antDesignProCardStrings.down)
+                    .value(entity.stardustResearchCost.percent)
+                    .trend(entity.stardustResearchCost.trend)
                 )
             )
         )
@@ -133,7 +139,6 @@ object GodsTechnologyViewPage extends IdentitySyntax {
       )
 
       val content = Antd.Collapse()
-//        .ghost(true)
         .defaultActiveKeyVarargs("1")
         .items(items.toJSArray)
 
